@@ -1,0 +1,190 @@
+# Mongolian (Cyrillic) translations for the wedding site.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: mn\n"
+"MIME-Version: 1.0\n"
+
+# base.html
+msgid "Our Wedding"
+msgstr "Манай Хурим"
+
+msgid "Home"
+msgstr "Нүүр"
+
+msgid "Schedule"
+msgstr "Хуваарь"
+
+msgid "Gallery"
+msgstr "Зургийн цомог"
+
+msgid "Travel"
+msgstr "Аялал"
+
+msgid "FAQ"
+msgstr "Түгээмэл асуулт"
+
+msgid "RSVP"
+msgstr "Урилгад хариулах"
+
+msgid "Taipei, Taiwan"
+msgstr "Тайвань, Тайбэй"
+
+msgid "December 2026"
+msgstr "2026 оны 12-р сар"
+
+# home.html
+msgid "Welcome"
+msgstr "Тавтай морил"
+
+msgid "We're getting married"
+msgstr "Бид гэрлэж байна"
+
+msgid "Date & venue to be confirmed — stay tuned!"
+msgstr "Огноо болон байршил тодорхойлогдоогүй байна — дагаж байгаарай!"
+
+msgid "Tea Ceremony"
+msgstr "Цайны ёслол"
+
+msgid "Traditional Chinese tea ceremony honouring both our families"
+msgstr "Хоёр талын гэр бүлийг хүндэтгэн уламжлалт Хятад цайны ёслол"
+
+msgid "Wedding Ceremony"
+msgstr "Гэрлэлтийн ёслол"
+
+msgid "Western-style vows in an intimate setting"
+msgstr "Дотно орчинд баруун хэв маягийн тангарга өргөх"
+
+msgid "Dinner Reception"
+msgstr "Хуримын зоог"
+
+msgid "Celebratory dinner together in the same room"
+msgstr "Нэг танхимд хамтдаа баярын зоог барих"
+
+msgid "The Venue"
+msgstr "Хурим болох газар"
+
+msgid "Beitou District, Taipei"
+msgstr "Тайбэй, Бэйтоу дүүрэг"
+
+msgid "Evening · ~40–50 guests"
+msgstr "Орой · ~40–50 зочин"
+
+msgid "Our Story"
+msgstr "Манай түүх"
+
+msgid "Travel Info"
+msgstr "Аялалын мэдээлэл"
+
+# rsvp.html
+msgid "Please respond by November 1, 2026"
+msgstr "2026 оны 11-р сарын 1-ний өдрөөс өмнө хариулна уу"
+
+msgid "Your Name"
+msgstr "Таны нэр"
+
+msgid "Email Address"
+msgstr "И-мэйл хаяг"
+
+msgid "Will you be joining us?"
+msgstr "Та ирэх боломжтой юу?"
+
+msgid "Number in your party"
+msgstr "Хэдэн хүн ирэх вэ"
+
+msgid "Include yourself. Let us know if you're bringing a partner or family member."
+msgstr "Өөрийгөө оруулаарай. Хамтрагч эсвэл гэр бүлийнхэнтэйгээ ирэх бол мэдэгдээрэй."
+
+msgid "Dietary Notes"
+msgstr "Хоолны онцлог"
+
+msgid "Song Request"
+msgstr "Дуу хүсэлт"
+
+msgid "We'll try our best to play it!"
+msgstr "Тэр дууг тоглуулахыг хичээнэ!"
+
+msgid "Message for Us"
+msgstr "Бидэнд захиа"
+
+msgid "Send RSVP"
+msgstr "Хариулт илгээх"
+
+# models.py choices
+msgid "Joyfully accepts"
+msgstr "Баяртайгаар хүлээн зөвшөөрнө"
+
+msgid "Regretfully declines"
+msgstr "Харамсалтайгаар татгалзана"
+
+# rsvp_confirm.html
+msgid "Thank You"
+msgstr "Баярлалаа"
+
+msgid "Thank You!"
+msgstr "Баярлалаа!"
+
+# schedule.html
+msgid "Day of Schedule"
+msgstr "Өдрийн хуваарь"
+
+msgid "Schedule details coming soon!"
+msgstr "Хуваарийн дэлгэрэнгүй мэдээлэл удахгүй гарна!"
+
+# gallery.html
+msgid "A few of our favourite moments"
+msgstr "Манай дуртай мөчүүдээс хэдхэн зураг"
+
+msgid "Photos coming soon — check back later!"
+msgstr "Зурагнууд удахгүй нэмэгдэнэ — дахин шалгаарай!"
+
+# travel.html headings
+msgid "Travel & Stay"
+msgstr "Аялал ба байрлал"
+
+msgid "Getting to Taipei, Taiwan"
+msgstr "Тайвань, Тайбэй хот руу очих нь"
+
+msgid "Getting to Taipei"
+msgstr "Тайбэй хот руу очих нь"
+
+msgid "Getting to Beitou"
+msgstr "Бэйтоу руу очих нь"
+
+msgid "Where to Stay"
+msgstr "Хаана байрлах вэ"
+
+msgid "In Beitou"
+msgstr "Бэйтоуд"
+
+msgid "In Central Taipei"
+msgstr "Тайбэй хот төвд"
+
+msgid "Visas & Entry"
+msgstr "Виз ба орох зөвшөөрөл"
+
+msgid "Getting Around Taipei"
+msgstr "Тайбэй хотоор явах нь"
+
+msgid "Good to Know"
+msgstr "Мэдэх хэрэгтэй зүйлс"
+
+# faq.html headings
+msgid "Everything you need to know"
+msgstr "Танд хэрэгтэй бүх зүйл"
+
+msgid "The Day"
+msgstr "Хурмын өдөр"
+
+msgid "Dress Code"
+msgstr "Хувцасны дүрэм"
+
+msgid "Guests & Kids"
+msgstr "Зочид ба хүүхдүүд"
+
+msgid "Gifts & Registry"
+msgstr "Бэлэг ба жагсаалт"
+
+msgid "Still have questions?"
+msgstr "Дахин асуулт байна уу?"

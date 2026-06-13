@@ -1,0 +1,190 @@
+# Traditional Chinese (Taiwan) translations for the wedding site.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-hant\n"
+"MIME-Version: 1.0\n"
+
+# base.html
+msgid "Our Wedding"
+msgstr "我們的婚禮"
+
+msgid "Home"
+msgstr "首頁"
+
+msgid "Schedule"
+msgstr "行程安排"
+
+msgid "Gallery"
+msgstr "相簿"
+
+msgid "Travel"
+msgstr "交通資訊"
+
+msgid "FAQ"
+msgstr "常見問題"
+
+msgid "RSVP"
+msgstr "回覆出席"
+
+msgid "Taipei, Taiwan"
+msgstr "台灣台北"
+
+msgid "December 2026"
+msgstr "2026年12月"
+
+# home.html
+msgid "Welcome"
+msgstr "歡迎"
+
+msgid "We're getting married"
+msgstr "我們要結婚了"
+
+msgid "Date & venue to be confirmed — stay tuned!"
+msgstr "日期與場地待確認，敬請期待！"
+
+msgid "Tea Ceremony"
+msgstr "敬茶儀式"
+
+msgid "Traditional Chinese tea ceremony honouring both our families"
+msgstr "傳統中式敬茶儀式，感謝雙方家人的祝福"
+
+msgid "Wedding Ceremony"
+msgstr "婚禮儀式"
+
+msgid "Western-style vows in an intimate setting"
+msgstr "溫馨親密的場地中交換西式誓言"
+
+msgid "Dinner Reception"
+msgstr "婚宴晚宴"
+
+msgid "Celebratory dinner together in the same room"
+msgstr "同一廳堂中共享精緻晚宴"
+
+msgid "The Venue"
+msgstr "婚禮場地"
+
+msgid "Beitou District, Taipei"
+msgstr "台北北投區"
+
+msgid "Evening · ~40–50 guests"
+msgstr "晚間 · 約40–50位賓客"
+
+msgid "Our Story"
+msgstr "我們的故事"
+
+msgid "Travel Info"
+msgstr "交通資訊"
+
+# rsvp.html
+msgid "Please respond by November 1, 2026"
+msgstr "請於2026年11月1日前回覆"
+
+msgid "Your Name"
+msgstr "您的姓名"
+
+msgid "Email Address"
+msgstr "電子郵件地址"
+
+msgid "Will you be joining us?"
+msgstr "您是否出席？"
+
+msgid "Number in your party"
+msgstr "出席人數"
+
+msgid "Include yourself. Let us know if you're bringing a partner or family member."
+msgstr "包含您本人。如攜伴或家人同行，請一併告知。"
+
+msgid "Dietary Notes"
+msgstr "飲食需求"
+
+msgid "Song Request"
+msgstr "點歌"
+
+msgid "We'll try our best to play it!"
+msgstr "我們會盡力播放！"
+
+msgid "Message for Us"
+msgstr "給我們的話"
+
+msgid "Send RSVP"
+msgstr "送出回覆"
+
+# models.py choices
+msgid "Joyfully accepts"
+msgstr "欣然接受"
+
+msgid "Regretfully declines"
+msgstr "遺憾婉謝"
+
+# rsvp_confirm.html
+msgid "Thank You"
+msgstr "感謝您"
+
+msgid "Thank You!"
+msgstr "感謝您！"
+
+# schedule.html
+msgid "Day of Schedule"
+msgstr "婚禮當天行程"
+
+msgid "Schedule details coming soon!"
+msgstr "行程詳情即將公佈！"
+
+# gallery.html
+msgid "A few of our favourite moments"
+msgstr "我們珍藏的美好時光"
+
+msgid "Photos coming soon — check back later!"
+msgstr "照片即將上傳，敬請期待！"
+
+# travel.html headings
+msgid "Travel & Stay"
+msgstr "交通與住宿"
+
+msgid "Getting to Taipei, Taiwan"
+msgstr "前往台灣台北"
+
+msgid "Getting to Taipei"
+msgstr "前往台北"
+
+msgid "Getting to Beitou"
+msgstr "前往北投"
+
+msgid "Where to Stay"
+msgstr "住宿建議"
+
+msgid "In Beitou"
+msgstr "北投區"
+
+msgid "In Central Taipei"
+msgstr "台北市中心"
+
+msgid "Visas & Entry"
+msgstr "簽證與入境"
+
+msgid "Getting Around Taipei"
+msgstr "台北市內交通"
+
+msgid "Good to Know"
+msgstr "實用資訊"
+
+# faq.html headings
+msgid "Everything you need to know"
+msgstr "您需要知道的一切"
+
+msgid "The Day"
+msgstr "婚禮當天"
+
+msgid "Dress Code"
+msgstr "服裝規定"
+
+msgid "Guests & Kids"
+msgstr "賓客與兒童"
+
+msgid "Gifts & Registry"
+msgstr "禮金與登記清單"
+
+msgid "Still have questions?"
+msgstr "還有其他問題？"

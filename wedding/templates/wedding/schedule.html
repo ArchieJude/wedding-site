@@ -1,0 +1,32 @@
+{% extends 'wedding/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Schedule" %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <h1 class="page-hero__title">{% trans "Day of Schedule" %}</h1>
+  <p class="page-hero__subtitle">{% trans "December 2026" %} &middot; {% trans "Taipei, Taiwan" %}</p>
+</section>
+
+<section class="schedule-section">
+  <div class="container container--narrow">
+    {% if events %}
+    <ol class="timeline">
+      {% for event in events %}
+      <li class="timeline__item">
+        <div class="timeline__time">{{ event.time|time:"g:i A" }}</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <h3 class="timeline__title">{{ event.title }}</h3>
+          {% if event.location %}<p class="timeline__location">{{ event.location }}</p>{% endif %}
+          {% if event.description %}<p class="timeline__desc">{{ event.description }}</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p class="empty-state" style="text-align:center; padding:4rem 0;">{% trans "Schedule details coming soon!" %}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

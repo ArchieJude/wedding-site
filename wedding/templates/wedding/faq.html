@@ -1,0 +1,189 @@
+{% extends 'wedding/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "FAQ" %}{% endblock %}
+
+{% get_current_language as LANG %}
+
+{% block content %}
+<section class="page-hero">
+  <h1 class="page-hero__title">{% trans "FAQ" %}</h1>
+  <p class="page-hero__subtitle">{% trans "Everything you need to know" %}</p>
+</section>
+
+<section class="content-section">
+  <div class="container container--narrow">
+
+    <div class="faq-group">
+      <h2>{% trans "The Day" %}</h2>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>我應該幾點到場？</summary>
+        <p>晚間5點開放入場。請於<strong>17:15前</strong>就座，以便準時開始敬茶儀式。整個晚宴預計至21:00結束。</p>
+        {% elif LANG == "mn" %}
+        <summary>Хэдэн цагт ирэх хэрэгтэй вэ?</summary>
+        <p>Хаалга 17:00 цагт нээгдэнэ. Цайны ёслолыг цагтаа эхлүүлэхийн тулд <strong>17:15 цагаас өмнө</strong> сууна уу. Оройн баяр ойролцоогоор 21:00 цагт дуусна.</p>
+        {% else %}
+        <summary>What time should I arrive?</summary>
+        <p>Doors open at 5:00 PM. Please arrive by <strong>5:15 PM</strong> so we can start the tea ceremony on time. The evening runs until approximately 9:00 PM.</p>
+        {% endif %}
+      </details>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>婚禮的流程是什麼？</summary>
+        <p>晚宴以<strong>傳統中式敬茶儀式</strong>開場，接著進行<strong>西式婚禮誓言</strong>，最後在同一個廳享用慶祝晚宴——整個晚上輕鬆流動，而非正式的場次安排。</p>
+        {% elif LANG == "mn" %}
+        <summary>Баярын хөтөлбөр ямар байх вэ?</summary>
+        <p>Оройн баяр <strong>уламжлалт Хятадын цайны ёслол</strong>-оор эхлэх бөгөөд дараа нь <strong>баруун хэв маягийн тангарга өргөх ёслол</strong>, тэгэхдээ ижил танхимд баярын зоог барина. Энэ бол хатуу хөтөлбөртэй биш дотно орой байх болно.</p>
+        {% else %}
+        <summary>What is the format of the ceremony?</summary>
+        <p>The evening begins with a <strong>traditional Chinese tea ceremony</strong>, followed by <strong>Western-style vows</strong>, then a celebratory dinner — all in the same room. It's an intimate, flowing evening rather than a formal seated programme.</p>
+        {% endif %}
+      </details>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>晚宴提供什麼餐點？</summary>
+        <p>我們計劃在北投文物館享用<strong>12道式日式懷石料理</strong>，並附高山茶服務。如有嚴重過敏或特殊飲食需求，請在RSVP中說明。</p>
+        {% elif LANG == "mn" %}
+        <summary>Хоолны цэс ямар байх вэ?</summary>
+        <p>Бэйтоу музейд <strong>12 дамжлагат Японы кайсэки хооллох</strong> төлөвлөгоотой бөгөөд уулын цай хамт орно. Хоолны хязгаарлалт байвал RSVP-д бичнэ үү — хүнд харшил заавал дурдаарай.</p>
+        {% else %}
+        <summary>What's on the menu?</summary>
+        <p>We're planning a <strong>12-course Japanese kaiseki dinner</strong> at Beitou Museum, with high-mountain tea service. Flag dietary restrictions in your RSVP — please mention any severe allergies.</p>
+        {% endif %}
+      </details>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>場地附近有停車位嗎？</summary>
+        <p>北投文物館附近停車位有限。強烈建議搭乘<strong>捷運轉計程車</strong>前往（新北投站下車後，再搭車上山），避免停車困擾。</p>
+        {% elif LANG == "mn" %}
+        <summary>Байрлалд зогсоол байна уу?</summary>
+        <p>Бэйтоу музейн ойролцоо хязгаарлагдмал зогсоол байдаг. Орой болохоор зогсоол олоход хэцүү байж болох тул <strong>MRT + такси</strong>-аар ирэхийг зөвлөж байна (Синьбэйтоу буудал, тэгэхдээ толгодыг дагуу такси).</p>
+        {% else %}
+        <summary>Is there parking at the venue?</summary>
+        <p>Limited parking near Beitou Museum. We strongly recommend arriving by <strong>MRT + taxi</strong> (Xinbeitou Station, then a short ride up the hill) — parking in the evening can be tricky.</p>
+        {% endif %}
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h2>{% trans "Dress Code" %}</h2>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>服裝有什麼要求？</summary>
+        <p><strong>時尚雞尾酒服裝</strong>為主要風格——優雅而舒適。場地是美麗的日式歷史建築，穿著節慶感、略為正式的衣著最為合適。無需正式晚禮服或燕尾服，但請避免過於休閒的穿著。</p>
+        {% elif LANG == "mn" %}
+        <summary>Хувцасны дүрэм ямар байх вэ?</summary>
+        <p><strong>Ухаалаг / коктейлийн хувцас</strong> — нарийн боловч тав тухтай хувцас. Газар нь гоёмсог түүхэн Японы барилга тул баярын уур амьсгалтай, чимэглэсэн хувцас тохиромжтой. Хатуу хачир эсвэл оёдол шаардлагагүй, гэхдээ хэт энгийн хувцаснаас зайлсхийгэерэй.</p>
+        {% else %}
+        <summary>What should I wear?</summary>
+        <p><strong>Smart / cocktail attire</strong> — elegant but comfortable. The venue is a beautiful historic Japanese building, so something festive and a little polished is perfect. No need for a ballgown or tux, but avoid overly casual.</p>
+        {% endif %}
+      </details>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>有哪些顏色需要避免？</summary>
+        <p>依照中式婚禮傳統，賓客通常避免穿著<strong>全白或全黑</strong>。歡迎穿著色彩鮮豔或喜慶的服裝！</p>
+        {% elif LANG == "mn" %}
+        <summary>Ямар өнгөнөөс зайлсхийх хэрэгтэй вэ?</summary>
+        <p>Хятадын хурмын уламжлалаар зочид <strong>цэвэр цагаан эсвэл цэвэр хар</strong> хувцас өмсөхгүй байх нь зохистой. Өнгөлөг, баярын хувцас тавтай морил!</p>
+        {% else %}
+        <summary>Any colours to avoid?</summary>
+        <p>Traditionally at Chinese weddings, guests avoid wearing <strong>all white or all black</strong>. Colour is celebrated — feel free to wear something bold or festive.</p>
+        {% endif %}
+      </details>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>鞋子有什麼建議？</summary>
+        <p>場地有傳統木地板，外部也有一小段上坡路。建議穿著舒適跟鞋或平底鞋，避免細高跟鞋。</p>
+        {% elif LANG == "mn" %}
+        <summary>Гутлын талаар зөвлөмж?</summary>
+        <p>Байрлалд уламжлалт модон шал байгаа бөгөөд гадна талд бага зэрэг өгсүүр зам бий. Тохиромжтой өсгий эсвэл хавтгай гутал зөвлөж байна, нимгэн өндөр өсгийнөөс зайлсхийгэерэй.</p>
+        {% else %}
+        <summary>What about shoes?</summary>
+        <p>The venue has traditional wooden floors and a short uphill path outside. Comfortable heels or flats are recommended over stilettos.</p>
+        {% endif %}
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h2>{% trans "Guests & Kids" %}</h2>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>我可以攜伴出席嗎？</summary>
+        <p>我們希望維持約40–50位親友的溫馨規模。若您希望攜伴，請在RSVP中填寫出席人數。如有疑問，歡迎直接與我們聯絡。</p>
+        {% elif LANG == "mn" %}
+        <summary>Хамтрагчаа дагуулж болох уу?</summary>
+        <p>Бид 40–50 хүний жижиг дотно баяр хийхээр төлөвлөж байна. Хамтрагч дагуулах бол RSVP-д хэдэн хүн ирэхийг дурдна уу. Асуулт байвал бидэнтэй шууд холбогдоорой.</p>
+        {% else %}
+        <summary>Can I bring a plus-one?</summary>
+        <p>We're keeping the celebration intimate at around 40–50 guests. If you'd like to bring a partner, note the number in your party on the RSVP. Reach out directly if you have questions.</p>
+        {% endif %}
+      </details>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>可以帶小孩嗎？</summary>
+        <p>我們非常喜歡小朋友，但這是一場成人晚宴。懇請安排小朋友在家留守，讓大家輕鬆享受這個美好的夜晚。感謝您的理解！</p>
+        {% elif LANG == "mn" %}
+        <summary>Хүүхдүүдийг дагуулж болох уу?</summary>
+        <p>Бид хүүхдүүдийг маш их хайрладаг ч энэ нь насанд хүрэгчдийн оройн баяр юм. Та хүүхдүүдийгээ гэртээ үлдээж, бүгд тайван баярлах боломж олгоорой. Ойлголцсонд баярлалаа!</p>
+        {% else %}
+        <summary>Are children welcome?</summary>
+        <p>We love kids, but this is an evening adult dinner event. We'd ask that little ones stay home so everyone can relax and enjoy the evening. Thank you for understanding!</p>
+        {% endif %}
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h2>{% trans "Gifts & Registry" %}</h2>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>有婚禮登記清單嗎？</summary>
+        <p>您的出席是給我們最好的禮物。若您希望致贈，請留意我們稍後分享的蜜月基金資訊。</p>
+        {% elif LANG == "mn" %}
+        <summary>Бэлгийн жагсаалт байна уу?</summary>
+        <p>Та ирэх нь бидэнд хамгийн үнэт бэлэг. Бэлэг өгөхийг хүсвэл зөгийн балны аялалын санд хандивлаж болно — дэлгэрэнгүйг удахгүй хуваалцана.</p>
+        {% else %}
+        <summary>Is there a registry?</summary>
+        <p>Your presence is the greatest gift. If you'd like to give something, a contribution to our honeymoon fund would mean the world — details to follow closer to the date.</p>
+        {% endif %}
+      </details>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
+        <summary>我應該帶紅包嗎？</summary>
+        <p>若您有心，當然歡迎贈送<strong>紅包</strong>，這是我們非常珍視的傳統。但這完全不是必須的——您的出席才是最重要的！</p>
+        {% elif LANG == "mn" %}
+        <summary>Улаан дугтуй (紅包) авчрах хэрэгтэй юу?</summary>
+        <p>Хүсвэл <strong>紅包 (улаан дугтуй)</strong> авчрах нь маш тохиромжтой — энэ бол бид хоёулаа үнэлдэг уламжлал. Ямар ч хүлээлт байхгүй — зөвгөн баярлахаар ирэж байхад л хангалттай!</p>
+        {% else %}
+        <summary>Should I bring a red envelope?</summary>
+        <p>A <strong>紅包 (red envelope)</strong> is absolutely welcome and a lovely tradition we both value. There's no expectation — just come ready to celebrate!</p>
+        {% endif %}
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h2>{% trans "Still have questions?" %}</h2>
+      {% if LANG == "zh-hant" %}
+      <p>歡迎直接與我們聯絡，尤其是需要旅遊協助的遠道而來的賓客。</p>
+      {% elif LANG == "mn" %}
+      <p>Бидэнтэй шууд холбогдоорой. Холоос ирж байгаа зочдод аяллын зохицуулалтад туслахдаа бид үргэлж бэлэн байна.</p>
+      {% else %}
+      <p>Don't hesitate to reach out — we're happy to help with anything, especially travel logistics for those coming from further away.</p>
+      {% endif %}
+      <a href="{% url 'travel' %}" class="btn btn--secondary" style="margin-top:1rem">{% trans "Travel Info" %}</a>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

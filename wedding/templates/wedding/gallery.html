@@ -1,0 +1,47 @@
+{% extends 'wedding/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Gallery" %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <h1 class="page-hero__title">{% trans "Gallery" %}</h1>
+  <p class="page-hero__subtitle">{% trans "A few of our favourite moments" %}</p>
+</section>
+
+<section class="gallery-section">
+  <div class="container">
+    {% if photos %}
+    <div class="gallery-grid">
+      {% for photo in photos %}
+      <figure class="gallery-item" onclick="openLightbox('{{ photo.image.url }}', '{{ photo.caption|escapejs }}')">
+        <img src="{{ photo.image.url }}" alt="{{ photo.caption }}">
+        {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="empty-state">{% trans "Photos coming soon — check back later!" %}</p>
+    {% endif %}
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox__close" onclick="closeLightbox()">&times;</button>
+  <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  <p class="lightbox__caption" id="lightbox-caption"></p>
+</div>
+
+<script>
+  function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.getElementById('lightbox').classList.add('lightbox--open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('lightbox--open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+{% endblock %}

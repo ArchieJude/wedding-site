@@ -1,0 +1,73 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Ariel & Achbold{% endblock %} | {% trans "Our Wedding" %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  {% if LANGUAGE_CODE == "zh-hant" %}
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
+  {% endif %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body class="lang-{{ LANGUAGE_CODE }}">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="{% url 'home' %}" class="nav-logo">A &amp; A</a>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+        <li><a href="{% url 'schedule' %}">{% trans "Schedule" %}</a></li>
+        <li><a href="{% url 'gallery' %}">{% trans "Gallery" %}</a></li>
+        <li><a href="{% url 'travel' %}">{% trans "Travel" %}</a></li>
+        <li><a href="{% url 'faq' %}">{% trans "FAQ" %}</a></li>
+        <li><a href="{% url 'rsvp' %}" class="nav-cta">{% trans "RSVP" %}</a></li>
+      </ul>
+      <div class="lang-switcher">
+        {% get_current_language as cur_lang %}
+        <a href="#" data-lang="en"       class="lang-btn{% if cur_lang == 'en' %}       lang-btn--active{% endif %}">EN</a>
+        <a href="#" data-lang="zh-hant"  class="lang-btn{% if cur_lang == 'zh-hant' %}  lang-btn--active{% endif %}">中文</a>
+        <a href="#" data-lang="mn"       class="lang-btn{% if cur_lang == 'mn' %}        lang-btn--active{% endif %}">МН</a>
+      </div>
+    </nav>
+  </header>
+
+  {% if messages %}
+  <div class="messages">
+    {% for message in messages %}
+    <div class="message message--{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <footer class="site-footer">
+    <p>Ariel &amp; Achbold &mdash; {% trans "Taipei, Taiwan" %} &mdash; {% trans "December 2026" %}</p>
+  </footer>
+
+  <script>
+    const LANG_PREFIXES = ['zh-hant', 'mn'];
+
+    document.querySelectorAll('[data-lang]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var lang = this.dataset.lang;
+        var path = window.location.pathname;
+
+        // Strip any existing language prefix
+        LANG_PREFIXES.forEach(function(prefix) {
+          var re = new RegExp('^\\/' + prefix + '(\\/|$)');
+          if (re.test(path)) path = path.replace('/' + prefix, '') || '/';
+        });
+
+        // Prepend new prefix (English has no prefix)
+        if (lang !== 'en') path = '/' + lang + (path.startsWith('/') ? path : '/' + path);
+
+        window.location.href = path;
+      });
+    });
+  </script>
+</body>
+</html>

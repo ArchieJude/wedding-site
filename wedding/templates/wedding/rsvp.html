@@ -1,0 +1,81 @@
+{% extends 'wedding/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "RSVP" %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <h1 class="page-hero__title">{% trans "RSVP" %}</h1>
+  <p class="page-hero__subtitle">{% trans "Please respond by November 1, 2026" %}</p>
+</section>
+
+<section class="form-section">
+  <div class="container container--narrow">
+    <form method="post" class="rsvp-form" id="rsvp-form">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="{{ form.name.id_for_label }}">{% trans "Your Name" %} *</label>
+        {{ form.name }}
+        {% if form.name.errors %}<p class="form-error">{{ form.name.errors.0 }}</p>{% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">{% trans "Email Address" %} *</label>
+        {{ form.email }}
+        {% if form.email.errors %}<p class="form-error">{{ form.email.errors.0 }}</p>{% endif %}
+      </div>
+
+      <div class="form-group">
+        <label>{% trans "Will you be joining us?" %} *</label>
+        <div class="radio-group">
+          {% for value, label in form.fields.attendance.choices %}
+          <label class="radio-label">
+            <input type="radio" name="attendance" value="{{ value }}"
+              {% if form.attendance.value == value %}checked{% endif %}>
+            {{ label }}
+          </label>
+          {% endfor %}
+        </div>
+        {% if form.attendance.errors %}<p class="form-error">{{ form.attendance.errors.0 }}</p>{% endif %}
+      </div>
+
+      <div class="form-group attending-only">
+        <label for="{{ form.number_in_party.id_for_label }}">{% trans "Number in your party" %}</label>
+        {{ form.number_in_party }}
+        <p class="form-hint">{% trans "Include yourself. Let us know if you're bringing a partner or family member." %}</p>
+      </div>
+
+      <div class="form-group">
+        <label for="{{ form.dietary_notes.id_for_label }}">{% trans "Dietary Notes" %}</label>
+        {{ form.dietary_notes }}
+      </div>
+
+      <div class="form-group attending-only">
+        <label for="{{ form.song_request.id_for_label }}">{% trans "Song Request" %}</label>
+        {{ form.song_request }}
+        <p class="form-hint">{% trans "We'll try our best to play it!" %}</p>
+      </div>
+
+      <div class="form-group">
+        <label for="{{ form.message.id_for_label }}">{% trans "Message for Us" %}</label>
+        {{ form.message }}
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--full">{% trans "Send RSVP" %}</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  const attendingRadios = document.querySelectorAll('input[name="attendance"]');
+  const attendingOnly = document.querySelectorAll('.attending-only');
+
+  function toggleAttending() {
+    const attending = document.querySelector('input[name="attendance"]:checked')?.value === 'yes';
+    attendingOnly.forEach(el => el.style.display = attending ? '' : 'none');
+  }
+
+  attendingRadios.forEach(r => r.addEventListener('change', toggleAttending));
+  toggleAttending();
+</script>
+{% endblock %}

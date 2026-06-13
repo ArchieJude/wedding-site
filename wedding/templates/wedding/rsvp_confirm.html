@@ -1,0 +1,33 @@
+{% extends 'wedding/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Thank You" %}{% endblock %}
+
+{% block content %}
+<section class="confirm-section">
+  <div class="container container--narrow" style="text-align:center; padding: 6rem 1rem;">
+    <div class="confirm-icon">&#9825;</div>
+    <h1 class="section-title">{% trans "Thank You!" %}</h1>
+    {% get_current_language as LANG %}
+    {% if LANG == "zh-hant" %}
+    <p class="story__text">
+      我們已收到您的回覆，迫不及待與您在台北共同慶祝。
+      請留意您的信箱——隨著日期臨近，我們將持續更新活動資訊。
+    </p>
+    {% elif LANG == "mn" %}
+    <p class="story__text">
+      Таны хариултыг хүлээн авлаа. Тайбэй хотод тантай хамт тэмдэглэх гэж байгаадаа бид маш их баяртай байна.
+      И-мэйлээ шалгаж байгаарай — өдөр ойртох тутам мэдэгдэл явуулна.
+    </p>
+    {% else %}
+    <p class="story__text">
+      We've received your RSVP and can't wait to celebrate with you in Taipei.
+      Keep an eye on your inbox — we'll send updates as the date gets closer.
+    </p>
+    {% endif %}
+    <div style="display:flex; gap:1rem; justify-content:center; margin-top:2rem; flex-wrap:wrap;">
+      <a href="{% url 'travel' %}" class="btn btn--secondary">{% trans "Travel Info" %}</a>
+      <a href="{% url 'faq' %}" class="btn btn--secondary">{% trans "FAQ" %}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
