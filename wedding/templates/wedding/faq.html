@@ -143,33 +143,26 @@
     </div>
 
     <div class="faq-group">
-      <h2>{% trans "Gifts & Registry" %}</h2>
-
-      <details class="faq-item">
-        {% if LANG == "zh-hant" %}
-        <summary>有婚禮登記清單嗎？</summary>
-        <p>您的出席是給我們最好的禮物。若您希望致贈，請留意我們稍後分享的蜜月基金資訊。</p>
-        {% elif LANG == "mn" %}
-        <summary>Бэлгийн жагсаалт байна уу?</summary>
-        <p>Та ирэх нь бидэнд хамгийн үнэт бэлэг. Бэлэг өгөхийг хүсвэл зөгийн балны аялалын санд хандивлаж болно — дэлгэрэнгүйг удахгүй хуваалцана.</p>
-        {% else %}
-        <summary>Is there a registry?</summary>
-        <p>Your presence is the greatest gift. If you'd like to give something, a contribution to our honeymoon fund would mean the world — details to follow closer to the date.</p>
-        {% endif %}
-      </details>
-
-      <details class="faq-item">
-        {% if LANG == "zh-hant" %}
-        <summary>我應該帶紅包嗎？</summary>
-        <p>若您有心，當然歡迎贈送<strong>紅包</strong>，這是我們非常珍視的傳統。但這完全不是必須的——您的出席才是最重要的！</p>
-        {% elif LANG == "mn" %}
-        <summary>Улаан дугтуй (紅包) авчрах хэрэгтэй юу?</summary>
-        <p>Хүсвэл <strong>紅包 (улаан дугтуй)</strong> авчрах нь маш тохиромжтой — энэ бол бид хоёулаа үнэлдэг уламжлал. Ямар ч хүлээлт байхгүй — зөвгөн баярлахаар ирэж байхад л хангалттай!</p>
-        {% else %}
-        <summary>Should I bring a red envelope?</summary>
-        <p>A <strong>紅包 (red envelope)</strong> is absolutely welcome and a lovely tradition we both value. There's no expectation — just come ready to celebrate!</p>
-        {% endif %}
-      </details>
+      <h2>{% trans "Gifts" %}</h2>
+      {% if LANG == "zh-hant" %}
+      <p class="faq-gift-note">
+        您願意跨越千里來到台灣與我們同慶，這本身就是無可比擬的禮物。
+        大家花費了寶貴的時間與金錢，只為了來陪伴我們——我們感激不盡，真的不需要任何其他的東西。
+        只要您在場，就是我們最想要的一切。
+      </p>
+      {% elif LANG == "mn" %}
+      <p class="faq-gift-note">
+        Та Тайваньд хүрэлцэн ирэхийн тулд цаг хугацаа, мөнгөө зарцуулж байгаа нь бидэнд хамгийн үнэ цэнтэй бэлэг юм.
+        Энэ замыг туулж ирж байгаа нь та бүхний хайрын илрэл бөгөөд бид үүнийг бүхнээс дээр үнэлдэг.
+        Танд өөр юу ч авчрах шаардлагагүй — та ирж байгаа нь л бидэнд хангалттай.
+      </p>
+      {% else %}
+      <p class="faq-gift-note">
+        We are so deeply grateful that everyone is spending so much time and money to travel to Taiwan
+        to celebrate with us. That journey itself is the most generous gift we could imagine.
+        Please don't bring anything — just yourselves.
+      </p>
+      {% endif %}
     </div>
 
     <div class="faq-group">

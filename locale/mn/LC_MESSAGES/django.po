@@ -183,8 +183,8 @@ msgstr "Хувцасны дүрэм"
 msgid "Guests & Kids"
 msgstr "Зочид ба хүүхдүүд"
 
-msgid "Gifts & Registry"
-msgstr "Бэлэг ба жагсаалт"
+msgid "Gifts"
+msgstr "Бэлгийн тухай"
 
 msgid "Still have questions?"
 msgstr "Дахин асуулт байна уу?"

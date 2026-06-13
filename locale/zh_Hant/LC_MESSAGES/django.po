@@ -183,8 +183,8 @@ msgstr "服裝規定"
 msgid "Guests & Kids"
 msgstr "賓客與兒童"
 
-msgid "Gifts & Registry"
-msgstr "禮金與登記清單"
+msgid "Gifts"
+msgstr "關於禮物"
 
 msgid "Still have questions?"
 msgstr "還有其他問題？"
