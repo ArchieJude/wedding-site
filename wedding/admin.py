@@ -10,11 +10,11 @@ def export_rsvps_csv(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="rsvps.csv"'
     writer = csv.writer(response)
-    writer.writerow(['Name', 'Email', 'Attending', 'Party Size', 'Dietary Notes', 'Song Request', 'Message', 'Submitted'])
+    writer.writerow(['Name', 'Email', 'Attending', 'Party Size', 'Plus One', 'Dietary Notes', 'Song Request', 'Message', 'Submitted'])
     for r in queryset:
         writer.writerow([
             r.name, r.email, r.get_attendance_display(),
-            r.number_in_party, r.dietary_notes,
+            r.number_in_party, r.plus_one_name, r.dietary_notes,
             r.song_request, r.message,
             r.submitted_at.strftime('%Y-%m-%d %H:%M'),
         ])
@@ -25,7 +25,7 @@ export_rsvps_csv.short_description = 'Export selected RSVPs to CSV'
 
 @admin.register(RSVP)
 class RSVPAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'attendance', 'number_in_party', 'dietary_notes', 'submitted_at']
+    list_display = ['name', 'email', 'attendance', 'number_in_party', 'plus_one_name', 'submitted_at']
     list_filter = ['attendance']
     search_fields = ['name', 'email']
     readonly_fields = ['submitted_at']

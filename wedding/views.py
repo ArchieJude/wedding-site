@@ -32,6 +32,8 @@ def _send_rsvp_notification(rsvp):
     ]
     if rsvp.attendance == 'yes':
         lines.append(f"Party size:  {rsvp.number_in_party}")
+    if rsvp.plus_one_name:
+        lines.append(f"Plus one:    {rsvp.plus_one_name}")
     if rsvp.dietary_notes:
         lines.append(f"Dietary:     {rsvp.dietary_notes}")
     if rsvp.song_request:

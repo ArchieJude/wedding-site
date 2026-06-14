@@ -45,6 +45,11 @@
         <p class="form-hint">{% trans "Include yourself. Let us know if you're bringing a partner or family member." %}</p>
       </div>
 
+      <div class="form-group attending-only" id="plus-one-name-group" style="display:none">
+        <label for="{{ form.plus_one_name.id_for_label }}">{% trans "Guest's Name" %}</label>
+        {{ form.plus_one_name }}
+      </div>
+
       <div class="form-group">
         <label for="{{ form.dietary_notes.id_for_label }}">{% trans "Dietary Notes" %}</label>
         {{ form.dietary_notes }}
@@ -69,13 +74,23 @@
 <script>
   const attendingRadios = document.querySelectorAll('input[name="attendance"]');
   const attendingOnly = document.querySelectorAll('.attending-only');
+  const partyInput = document.getElementById('{{ form.number_in_party.id_for_label }}');
+  const plusOneGroup = document.getElementById('plus-one-name-group');
 
   function toggleAttending() {
     const attending = document.querySelector('input[name="attendance"]:checked')?.value === 'yes';
     attendingOnly.forEach(el => el.style.display = attending ? '' : 'none');
+    togglePlusOne();
+  }
+
+  function togglePlusOne() {
+    const attending = document.querySelector('input[name="attendance"]:checked')?.value === 'yes';
+    const hasGuest = attending && parseInt(partyInput.value) > 1;
+    plusOneGroup.style.display = hasGuest ? '' : 'none';
   }
 
   attendingRadios.forEach(r => r.addEventListener('change', toggleAttending));
+  partyInput.addEventListener('input', togglePlusOne);
   toggleAttending();
 </script>
 {% endblock %}

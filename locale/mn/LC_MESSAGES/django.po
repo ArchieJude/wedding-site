@@ -93,6 +93,9 @@ msgstr "Та ирэх боломжтой юу?"
 msgid "Number in your party"
 msgstr "Хэдэн хүн ирэх вэ"
 
+msgid "Guest's Name"
+msgstr "Дагалдах зочны нэр"
+
 msgid "Include yourself. Let us know if you're bringing a partner or family member."
 msgstr "Өөрийгөө оруулаарай. Хамтрагч эсвэл гэр бүлийнхэнтэйгээ ирэх бол мэдэгдээрэй."
 
