@@ -14,7 +14,11 @@ def rsvp(request):
     if request.method == 'POST':
         form = RSVPForm(request.POST)
         if form.is_valid():
-            rsvp = form.save()
+            rsvp = form.save(commit=False)
+            rsvp.guest_names = [
+                n.strip() for n in request.POST.getlist('guest_name') if n.strip()
+            ]
+            rsvp.save()
             _send_rsvp_notification(rsvp)
             messages.success(request, "Thank you! Your RSVP has been received.")
             return redirect('rsvp_confirm')
@@ -32,8 +36,9 @@ def _send_rsvp_notification(rsvp):
     ]
     if rsvp.attendance == 'yes':
         lines.append(f"Party size:  {rsvp.number_in_party}")
-    if rsvp.plus_one_name:
-        lines.append(f"Plus one:    {rsvp.plus_one_name}")
+    if rsvp.guest_names:
+        for i, name in enumerate(rsvp.guest_names, 1):
+            lines.append(f"Guest {i}:     {name}")
     if rsvp.dietary_notes:
         lines.append(f"Dietary:     {rsvp.dietary_notes}")
     if rsvp.song_request:

@@ -45,10 +45,10 @@
         <p class="form-hint">{% trans "Include yourself. Let us know if you're bringing a partner or family member." %}</p>
       </div>
 
-      <div class="form-group attending-only" id="plus-one-name-group" style="display:none">
-        <label for="{{ form.plus_one_name.id_for_label }}">{% trans "Guest's Name" %}</label>
-        {{ form.plus_one_name }}
-      </div>
+      <div id="guest-names-container" class="attending-only"
+           data-label="{% trans 'Guest' %}"
+           data-placeholder="{% trans 'Full name' %}"
+           style="display:none"></div>
 
       <div class="form-group">
         <label for="{{ form.dietary_notes.id_for_label }}">{% trans "Dietary Notes" %}</label>
@@ -75,22 +75,40 @@
   const attendingRadios = document.querySelectorAll('input[name="attendance"]');
   const attendingOnly = document.querySelectorAll('.attending-only');
   const partyInput = document.getElementById('{{ form.number_in_party.id_for_label }}');
-  const plusOneGroup = document.getElementById('plus-one-name-group');
+  const guestContainer = document.getElementById('guest-names-container');
+  const guestLabel = guestContainer.dataset.label;
+  const guestPlaceholder = guestContainer.dataset.placeholder;
+
+  function updateGuestFields() {
+    const attending = document.querySelector('input[name="attendance"]:checked')?.value === 'yes';
+    const numGuests = attending ? Math.max(0, (parseInt(partyInput.value) || 1) - 1) : 0;
+
+    // Add fields up to numGuests
+    while (guestContainer.children.length < numGuests) {
+      const idx = guestContainer.children.length + 1;
+      const div = document.createElement('div');
+      div.className = 'form-group';
+      div.innerHTML =
+        `<label>${guestLabel} ${idx}</label>` +
+        `<input type="text" name="guest_name" placeholder="${guestPlaceholder}">`;
+      guestContainer.appendChild(div);
+    }
+    // Remove extra fields
+    while (guestContainer.children.length > numGuests) {
+      guestContainer.removeChild(guestContainer.lastChild);
+    }
+
+    guestContainer.style.display = numGuests > 0 ? '' : 'none';
+  }
 
   function toggleAttending() {
     const attending = document.querySelector('input[name="attendance"]:checked')?.value === 'yes';
     attendingOnly.forEach(el => el.style.display = attending ? '' : 'none');
-    togglePlusOne();
-  }
-
-  function togglePlusOne() {
-    const attending = document.querySelector('input[name="attendance"]:checked')?.value === 'yes';
-    const hasGuest = attending && parseInt(partyInput.value) > 1;
-    plusOneGroup.style.display = hasGuest ? '' : 'none';
+    updateGuestFields();
   }
 
   attendingRadios.forEach(r => r.addEventListener('change', toggleAttending));
-  partyInput.addEventListener('input', togglePlusOne);
+  partyInput.addEventListener('input', updateGuestFields);
   toggleAttending();
 </script>
 {% endblock %}
