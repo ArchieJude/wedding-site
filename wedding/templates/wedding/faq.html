@@ -168,13 +168,16 @@
     <div class="faq-group">
       <h2>{% trans "Still have questions?" %}</h2>
       {% if LANG == "zh-hant" %}
-      <p>歡迎直接與我們聯絡，尤其是需要旅遊協助的遠道而來的賓客。</p>
+      <p>歡迎直接寫信給我們，尤其是需要旅遊協助的遠道賓客。</p>
       {% elif LANG == "mn" %}
       <p>Бидэнтэй шууд холбогдоорой. Холоос ирж байгаа зочдод аяллын зохицуулалтад туслахдаа бид үргэлж бэлэн байна.</p>
       {% else %}
       <p>Don't hesitate to reach out — we're happy to help with anything, especially travel logistics for those coming from further away.</p>
       {% endif %}
-      <a href="{% url 'travel' %}" class="btn btn--secondary" style="margin-top:1rem">{% trans "Travel Info" %}</a>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem; align-items:center;">
+        <a href="{% url 'travel' %}" class="btn btn--secondary">{% trans "Travel Info" %}</a>
+        <a href="mailto:ariel.toy@gmail.com" class="contact-email">ariel.toy@gmail.com</a>
+      </div>
     </div>
 
   </div>

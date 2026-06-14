@@ -548,6 +548,14 @@ a { color: inherit; text-decoration: none; }
 /* ── Form hint ── */
 .form-hint { font-size: .78rem; color: var(--muted); margin-top: .25rem; }
 
+/* ── Contact email link ── */
+.contact-email {
+  font-size: .9rem;
+  color: var(--sage-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ── Gift note (non-collapsible statement in FAQ) ── */
 .faq-gift-note {
   color: var(--muted);
