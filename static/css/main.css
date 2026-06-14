@@ -214,12 +214,21 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.5rem;
 }
 
+.story__subheading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+}
+
 .story__text {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.25rem;
   line-height: 1.9;
+  text-align: left;
 }
 
 /* ── Page hero ── */

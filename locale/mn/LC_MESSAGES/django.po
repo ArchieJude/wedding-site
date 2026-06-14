@@ -186,8 +186,8 @@ msgstr "Хурмын өдөр"
 msgid "Dress Code"
 msgstr "Хувцасны дүрэм"
 
-msgid "Guests & Kids"
-msgstr "Зочид ба хүүхдүүд"
+msgid "Guests"
+msgstr "Зочид"
 
 msgid "Gifts"
 msgstr "Бэлгийн тухай"

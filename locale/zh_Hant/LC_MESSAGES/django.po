@@ -186,8 +186,8 @@ msgstr "婚禮當天"
 msgid "Dress Code"
 msgstr "服裝規定"
 
-msgid "Guests & Kids"
-msgstr "賓客與兒童"
+msgid "Guests"
+msgstr "賓客"
 
 msgid "Gifts"
 msgstr "關於禮物"

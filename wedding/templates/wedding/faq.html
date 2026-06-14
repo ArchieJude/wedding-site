@@ -18,6 +18,19 @@
 
       <details class="faq-item">
         {% if LANG == "zh-hant" %}
+        <summary>為什麼選在台灣？</summary>
+        <p>我們選擇台灣，是因為2024年一起造訪時深深愛上了這個地方。從台北令人驚豔的美食，到阿里山國家公園的秀麗風景，台灣是一個絕佳的旅遊勝地。此外，在台灣舉辦婚禮也讓我們有機會與亞洲各地的家人和摯友更近距離地共同慶祝。</p>
+        {% elif LANG == "mn" %}
+        <summary>Яагаад Тайвань вэ?</summary>
+        <p>Бид 2024 онд хамтдаа зочилж байхдаа Тайваньд дурласан учраас энэ газрыг сонгосон. Тайбэйн гайхамшигт хоол хүнснээс эхлээд Алишань үндэсний цэцэрлэгт хүрээлэнгийн үзэсгэлэнт байгалийг хүртэл, Тайвань бол гайхалтай амралтын газар юм. Мөн Азид байгаа гэр бүл болон дотны хүмүүстэйгээ ойроос тэмдэглэх боломж олгодог.</p>
+        {% else %}
+        <summary>Why Taiwan?</summary>
+        <p>We chose Taiwan because it's a place we truly fell in love with when we visited together in 2024. From the incredible food in Taipei to the beautiful scenery of Alishan national park, it is a wonderful vacation destination. It also gives us an opportunity to celebrate closer to family and loved ones throughout Asia.</p>
+        {% endif %}
+      </details>
+
+      <details class="faq-item">
+        {% if LANG == "zh-hant" %}
         <summary>我應該幾點到場？</summary>
         <p>晚間5點開放入場。請於<strong>17:15前</strong>就座，以便準時開始敬茶儀式。整個晚宴預計至21:00結束。</p>
         {% elif LANG == "mn" %}
@@ -101,19 +114,19 @@
       <details class="faq-item">
         {% if LANG == "zh-hant" %}
         <summary>鞋子有什麼建議？</summary>
-        <p>場地有傳統木地板，外部也有一小段上坡路。建議穿著舒適跟鞋或平底鞋，避免細高跟鞋。</p>
+        <p>北投文物館為傳統日式建築，進入室內須脫鞋。建議穿著方便穿脫的鞋子，並自備舒適的室內襪。</p>
         {% elif LANG == "mn" %}
         <summary>Гутлын талаар зөвлөмж?</summary>
-        <p>Байрлалд уламжлалт модон шал байгаа бөгөөд гадна талд бага зэрэг өгсүүр зам бий. Тохиромжтой өсгий эсвэл хавтгай гутал зөвлөж байна, нимгэн өндөр өсгийнөөс зайлсхийгэерэй.</p>
+        <p>Бэйтоу музей бол уламжлалт Японы барилга тул дотор орохдоо гутлаа тайлах шаардлагатай. Өмсөж тайлахад хялбар гутал өмсөж, тав тухтай оймс авчраарай.</p>
         {% else %}
         <summary>What about shoes?</summary>
-        <p>The venue has traditional wooden floors and a short uphill path outside. Comfortable heels or flats are recommended over stilettos.</p>
+        <p>No shoes are allowed inside the Japanese building due to its traditional wooden floors. We recommend wearing shoes that are easy to slip on and off, and bringing a comfortable pair of socks.</p>
         {% endif %}
       </details>
     </div>
 
     <div class="faq-group">
-      <h2>{% trans "Guests & Kids" %}</h2>
+      <h2>{% trans "Guests" %}</h2>
 
       <details class="faq-item">
         {% if LANG == "zh-hant" %}
@@ -125,19 +138,6 @@
         {% else %}
         <summary>Can I bring a plus-one?</summary>
         <p>We're keeping the celebration intimate at around 40–50 guests. If you'd like to bring a partner, note the number in your party on the RSVP. Reach out directly if you have questions.</p>
-        {% endif %}
-      </details>
-
-      <details class="faq-item">
-        {% if LANG == "zh-hant" %}
-        <summary>可以帶小孩嗎？</summary>
-        <p>我們非常喜歡小朋友，但這是一場成人晚宴。懇請安排小朋友在家留守，讓大家輕鬆享受這個美好的夜晚。感謝您的理解！</p>
-        {% elif LANG == "mn" %}
-        <summary>Хүүхдүүдийг дагуулж болох уу?</summary>
-        <p>Бид хүүхдүүдийг маш их хайрладаг ч энэ нь насанд хүрэгчдийн оройн баяр юм. Та хүүхдүүдийгээ гэртээ үлдээж, бүгд тайван баярлах боломж олгоорой. Ойлголцсонд баярлалаа!</p>
-        {% else %}
-        <summary>Are children welcome?</summary>
-        <p>We love kids, but this is an evening adult dinner event. We'd ask that little ones stay home so everyone can relax and enjoy the evening. Thank you for understanding!</p>
         {% endif %}
       </details>
     </div>
