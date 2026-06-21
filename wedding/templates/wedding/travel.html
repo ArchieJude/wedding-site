@@ -40,36 +40,24 @@
     </div>
 
     <div class="info-block">
-      <h2>{% trans "Getting to Beitou" %}</h2>
+      <h2>{% trans "Getting to the Venue" %}</h2>
       {% if LANG == "zh-hant" %}
-      <p>婚禮場地位於<strong>北投區</strong>，台北北部的溫泉山城。搭捷運非常方便：</p>
-      <ul>
-        <li>搭乘<strong>淡水信義線（紅線）</strong>至<strong>新北投站</strong>，再轉乘<strong>新北投支線</strong>（一站即達北投）。</li>
-        <li>從新北投站步行約15分鐘或搭計程車即可抵達文物館（上坡路段建議搭車）。</li>
-      </ul>
+      <p>場地確認後，我們將提供詳細的交通指引。請先熟悉台北捷運系統——涵蓋全市，是最便捷的出行方式，也是從任何地方前往婚禮場地的最佳選擇。</p>
       {% elif LANG == "mn" %}
-      <p>Хурим болох газар нь Тайбэйн хойд хэсэгт орших <strong>Бэйтоу дүүрэг</strong>-т байрладаг. MRT-ээр хялбархан очиж болно:</p>
-      <ul>
-        <li><strong>Данших-Синьи шугам (Улаан)</strong>-аар <strong>Синьбэйтоу буудал</strong> хүртэл явж, <strong>Синьбэйтоу салаа шугам</strong>-аар нэг буудал туулна.</li>
-        <li>Синьбэйтоу буудлаас музей хүртэл такси эсвэл ~15 минутын явган аялал (өгсүүр замаар).</li>
-      </ul>
+      <p>Газар батлагдсаны дараа тээврийн дэлгэрэнгүй мэдээллийг хуваалцах болно. Тэр хооронд Тайбэйн MRT системтэй танилцаарай — бүх хотыг хамардаг бөгөөд хаанаас ч хурим болох газар хүрэх хамгийн хялбар арга юм.</p>
       {% else %}
-      <p>The venue is in <strong>Beitou District</strong>, a scenic mountain spa town in northern Taipei. Easy by MRT:</p>
-      <ul>
-        <li>Take the <strong>Danshui-Xinyi Line (Red)</strong> to <strong>Xinbeitou Station</strong>, then the <strong>Xinbeitou Branch Line</strong> one stop to Xinbeitou.</li>
-        <li>From Xinbeitou Station it's a short taxi ride or ~15-min walk uphill to the museum. We recommend the taxi for the uphill stretch.</li>
-      </ul>
+      <p>Transport details to the venue will be shared once the location is confirmed. In the meantime, get familiar with Taipei's MRT — it covers the whole city and will be the easiest way to get there from wherever you're staying.</p>
       {% endif %}
     </div>
 
     <div class="info-block">
       <h2>{% trans "Where to Stay" %}</h2>
       {% if LANG == "zh-hant" %}
-      <p>建議住在<strong>北投</strong>（距場地步行可達，可體驗溫泉旅館）或台北市中心（交通便利，飲食選擇豐富）。</p>
+      <p>台北住宿選擇豐富。場地確認後，我們將提供更具體的建議，但以下是目前的參考方向。</p>
       {% elif LANG == "mn" %}
-      <p>Бид <strong>Бэйтоу</strong> (талбайтай ойр, халуун рашааны зочид буудлууд) эсвэл <strong>Тайбэй хот төв</strong> (MRT-ээр хялбар очих) хэсэгт байрлахыг зөвлөж байна.</p>
+      <p>Тайбэйд байрлах олон сонголт байдаг. Газар батлагдсаны дараа илүү тодорхой зөвлөмж өгөх болно, гэхдээ энэ нь одоогоор мэдэж авах хэрэгтэй зүйлс юм.</p>
       {% else %}
-      <p>We suggest staying in <strong>Beitou</strong> (walking distance to the venue, hot-spring hotels) or central <strong>Taipei</strong> (more dining options, easy MRT access).</p>
+      <p>Taipei has great accommodation options. We'll share more specific recommendations once the venue is confirmed, but here's a helpful starting point.</p>
       {% endif %}
       <div class="hotel-grid">
         <div class="hotel-card">
@@ -80,11 +68,11 @@
             <li>Yuncui Boutique Hotel</li>
           </ul>
           {% if LANG == "zh-hant" %}
-          <p class="hotel-note">許多北投飯店提供客房或公共溫泉泡湯，非常值得體驗！</p>
+          <p class="hotel-note">許多北投飯店提供溫泉泡湯，非常值得體驗！</p>
           {% elif LANG == "mn" %}
-          <p class="hotel-note">Бэйтоугийн олон зочид буудалд өрөөний эсвэл нийтийн рашааны ус байдаг — туршаад үзэхийг зөвлөж байна!</p>
+          <p class="hotel-note">Бэйтоугийн олон зочид буудалд рашааны ус байдаг — туршаад үзэхийг зөвлөж байна!</p>
           {% else %}
-          <p class="hotel-note">Many Beitou hotels offer hot-spring baths — a great experience!</p>
+          <p class="hotel-note">Beitou is a scenic hot-spring neighbourhood — a great base and experience in its own right.</p>
           {% endif %}
         </div>
         <div class="hotel-card">
@@ -95,11 +83,11 @@
             <li>Courtyard by Marriott Taipei</li>
           </ul>
           {% if LANG == "zh-hant" %}
-          <p class="hotel-note">搭捷運至北投約30–40分鐘，周邊餐廳選擇多。</p>
+          <p class="hotel-note">位置中心，餐廳選擇多，交通便利。</p>
           {% elif LANG == "mn" %}
-          <p class="hotel-note">MRT-ээр Бэйтоу хүртэл 30–40 мин. Ойролцоо олон ресторан байдаг.</p>
+          <p class="hotel-note">Төв байршилтай, ойролцоо олон ресторан, MRT хялбар.</p>
           {% else %}
-          <p class="hotel-note">30–40 min to Beitou by MRT. More restaurant options nearby.</p>
+          <p class="hotel-note">Central location with plenty of dining options and easy MRT access.</p>
           {% endif %}
         </div>
       </div>
@@ -164,21 +152,21 @@
         <li>貨幣：<strong>新台幣（NTD / NT$）</strong>。ATM到處可見，包括7-Eleven（可接受外國卡）。</li>
         <li>電壓：<strong>110V，A型插頭</strong>（與北美相同）。英國/歐洲訪客需攜帶轉接頭。</li>
         <li>SIM卡：入境大廳可購買含流量預付SIM卡，價格非常實惠。</li>
-        <li>12月天氣：涼爽宜人，12–20°C。建議攜帶輕薄外套，北投山區氣溫略低。</li>
+        <li>12月天氣：涼爽宜人，12–20°C。建議攜帶輕薄外套，夜晚較涼。</li>
       </ul>
       {% elif LANG == "mn" %}
       <ul>
         <li>Валют: <strong>Шинэ Тайваний доллар (NTD / NT$)</strong>. ATM хаа сайгүй байдаг, 7-Eleven-д ч гадаадын карт хүлээн авдаг.</li>
         <li>Цахилгаан: <strong>110V, A төрлийн залгуур</strong> (Хойд Америктай адил). Монголоос ирэгчид адаптер авч явна.</li>
         <li>SIM карт: Нисэх буудлын ирэх зал дээр өгөгдлийн урьдчилж төлөх SIM картыг маш хямд үнээр авч болно.</li>
-        <li>12-р сарын цаг агаар: Сэрүүн, 12–20°C. Хөнгөн хүрэм аваарай, Бэйтоу арай хүйтэн байдаг.</li>
+        <li>12-р сарын цаг агаар: Сэрүүн, 12–20°C. Хөнгөн хүрэм аваарай — орой арай хүйтэн байдаг.</li>
       </ul>
       {% else %}
       <ul>
         <li>Currency: <strong>New Taiwan Dollar (NTD / NT$)</strong>. ATMs everywhere, including 7-Eleven (accepts foreign cards).</li>
         <li>Power: <strong>110V, Type A plugs</strong> (same as North America). UK/EU visitors need an adapter.</li>
         <li>SIM / Data: Prepaid SIM cards sold at the airport arrival hall, very affordable.</li>
-        <li>December weather: cool and mild, 12–20°C. Light jacket recommended; Beitou is slightly cooler.</li>
+        <li>December weather: cool and mild, 12–20°C. Light jacket recommended — evenings can be cool.</li>
       </ul>
       {% endif %}
     </div>

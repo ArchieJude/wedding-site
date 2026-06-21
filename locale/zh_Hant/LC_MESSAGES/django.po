@@ -34,6 +34,9 @@ msgstr "台灣台北"
 msgid "December 2026"
 msgstr "2026年12月"
 
+msgid "December 22, 2026"
+msgstr "2026年12月22日"
+
 # home.html
 msgid "Welcome"
 msgstr "歡迎"
@@ -157,6 +160,9 @@ msgstr "前往台北"
 
 msgid "Getting to Beitou"
 msgstr "前往北投"
+
+msgid "Getting to the Venue"
+msgstr "前往婚禮場地"
 
 msgid "Where to Stay"
 msgstr "住宿建議"

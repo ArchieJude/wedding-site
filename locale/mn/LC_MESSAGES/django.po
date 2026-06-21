@@ -34,6 +34,9 @@ msgstr "Тайвань, Тайбэй"
 msgid "December 2026"
 msgstr "2026 оны 12-р сар"
 
+msgid "December 22, 2026"
+msgstr "2026 оны 12-р сарын 22"
+
 # home.html
 msgid "Welcome"
 msgstr "Тавтай морил"
@@ -157,6 +160,9 @@ msgstr "Тайбэй хот руу очих нь"
 
 msgid "Getting to Beitou"
 msgstr "Бэйтоу руу очих нь"
+
+msgid "Getting to the Venue"
+msgstr "Хурим болох газарт очих нь"
 
 msgid "Where to Stay"
 msgstr "Хаана байрлах вэ"

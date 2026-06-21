@@ -7,11 +7,7 @@
   <div class="hero__inner">
     <p class="hero__eyebrow">{% trans "We're getting married" %}</p>
     <h1 class="hero__names">Ariel &amp; Achbold</h1>
-    {# Update the two lines below once the deposit is paid and 12/22 is confirmed #}
-    <p class="hero__date">
-      {% trans "December 2026" %}
-      <span class="hero__date-note">{% trans "Date & venue to be confirmed — stay tuned!" %}</span>
-    </p>
+    <p class="hero__date">{% trans "December 22, 2026" %}</p>
     <div class="hero__divider"></div>
     <p class="hero__venue">{% trans "Taipei, Taiwan" %}</p>
     <a href="{% url 'rsvp' %}" class="btn btn--primary">{% trans "RSVP" %}</a>
@@ -47,25 +43,21 @@
     {% if LANG == "zh-hant" %}
     <p class="story__text">
       我們計劃在台北舉辦一場溫馨親密的夜晚聚會，與最重要的親友共同慶祝。
-      我們的首選場地是<strong>北投文物館</strong>，一棟坐落於北投山區的美麗日式歷史建築。
-      確認場地後，我們將提供更多詳情。
+      場地詳情即將公佈，敬請期待！
     </p>
     {% elif LANG == "mn" %}
     <p class="story__text">
       Бид Тайбэй хотод дотны хүмүүстэйгээ хамт жижиг, дотно баяр хийхээр төлөвлөж байна.
-      Манай тэргүүний сонголт бол <strong>Бэйтоу музей（北投文物館）</strong> —
-      Бэйтоугийн уулархаг бүс нутаг дахь гоёмсог түүхэн Японы архитектурын барилга.
-      Газар батлагдсаны дараа дэлгэрэнгүй мэдээлэл өгөх болно.
+      Газрын дэлгэрэнгүй мэдээлэл удахгүй гарна — дагаж байгаарай!
     </p>
     {% else %}
     <p class="story__text">
       We're planning an intimate evening in Taipei — a small, cosy celebration with the people who mean the most to us.
-      Our leading venue is <strong>北投文物館 (Beitou Museum)</strong>, a beautiful historic Japanese-style heritage building
-      nestled in the mountains of Beitou. More details coming once everything is confirmed.
+      Venue details coming soon!
     </p>
     {% endif %}
     <div class="venue-meta">
-      <span>&#128205; {% trans "Beitou District, Taipei" %}</span>
+      <span>&#128205; {% trans "Taipei, Taiwan" %}</span>
       <span>&#128336; {% trans "Evening · ~40–50 guests" %}</span>
     </div>
   </div>
