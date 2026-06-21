@@ -10,10 +10,11 @@ class RSVP(models.Model):
 
     name = models.CharField(max_length=200)
     email = models.EmailField()
-    attendance = models.CharField(max_length=3, choices=ATTENDANCE_CHOICES)
+    attendance = models.CharField(max_length=13, choices=ATTENDANCE_CHOICES)
     number_in_party = models.PositiveIntegerField(default=1)
     guest_names = models.JSONField(default=list, blank=True)
     dietary_notes = models.TextField(blank=True)
+    plus_one_dietary_notes = models.TextField(blank=True)
     song_request = models.CharField(max_length=300, blank=True)
     message = models.TextField(blank=True)
     submitted_at = models.DateTimeField(auto_now_add=True)

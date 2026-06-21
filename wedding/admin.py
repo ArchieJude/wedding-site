@@ -10,12 +10,12 @@ def export_rsvps_csv(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="rsvps.csv"'
     writer = csv.writer(response)
-    writer.writerow(['Name', 'Email', 'Attending', 'Party Size', 'Guest Names', 'Dietary Notes', 'Song Request', 'Message', 'Submitted'])
+    writer.writerow(['Name', 'Email', 'Attending', 'Party Size', 'Guest Names', 'Dietary Notes', '+1 Dietary Notes', 'Song Request', 'Message', 'Submitted'])
     for r in queryset:
         writer.writerow([
             r.name, r.email, r.get_attendance_display(),
             r.number_in_party, ', '.join(r.guest_names), r.dietary_notes,
-            r.song_request, r.message,
+            r.plus_one_dietary_notes, r.song_request, r.message,
             r.submitted_at.strftime('%Y-%m-%d %H:%M'),
         ])
     return response

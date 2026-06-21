@@ -5,7 +5,7 @@
 {% block content %}
 <section class="page-hero">
   <h1 class="page-hero__title">{% trans "RSVP" %}</h1>
-  <p class="page-hero__subtitle">{% trans "Please respond by November 1, 2026" %}</p>
+  <p class="page-hero__subtitle">{% trans "Please respond by August 31, 2026" %}</p>
 </section>
 
 <section class="form-section">
@@ -39,7 +39,7 @@
         {% if form.attendance.errors %}<p class="form-error">{{ form.attendance.errors.0 }}</p>{% endif %}
       </div>
 
-      <div class="form-group attending-only">
+      <div class="form-group attending-only" style="display:none">
         <label for="{{ form.number_in_party.id_for_label }}">{% trans "Number in your party" %}</label>
         {{ form.number_in_party }}
         <p class="form-hint">{% trans "Include yourself. Let us know if you're bringing a partner or family member." %}</p>
@@ -56,7 +56,7 @@
         {{ form.dietary_notes }}
       </div>
 
-      <div class="form-group attending-only">
+      <div class="form-group attending-only" style="display:none">
         <label for="{{ form.song_request.id_for_label }}">{% trans "Song Request" %}</label>
         {{ form.song_request }}
         <p class="form-hint">{% trans "We'll try our best to play it!" %}</p>
@@ -85,7 +85,6 @@
     const attending = document.querySelector('input[name="attendance"]:checked')?.value === 'yes';
     const numGuests = attending ? Math.max(0, (parseInt(partyInput.value) || 1) - 1) : 0;
 
-    // Add fields up to numGuests
     while (guestContainer.children.length < numGuests) {
       const idx = guestContainer.children.length + 1;
       const label = idx === 1 ? plusOneLabel : `${guestLabel} ${idx}`;
@@ -96,7 +95,6 @@
         `<input type="text" name="guest_name" placeholder="${guestPlaceholder}">`;
       guestContainer.appendChild(div);
     }
-    // Remove extra fields
     while (guestContainer.children.length > numGuests) {
       guestContainer.removeChild(guestContainer.lastChild);
     }

@@ -50,8 +50,8 @@ msgstr "日期與場地待確認，敬請期待！"
 msgid "Tea Ceremony"
 msgstr "敬茶儀式"
 
-msgid "Traditional Chinese tea ceremony honouring both our families"
-msgstr "傳統中式敬茶儀式，感謝雙方家人的祝福"
+msgid "Traditional Chinese/Mongolian tea ceremony honoring both our families"
+msgstr "傳統中蒙式敬茶儀式，感謝雙方家人的祝福"
 
 msgid "Wedding Ceremony"
 msgstr "婚禮儀式"
@@ -81,8 +81,8 @@ msgid "Travel Info"
 msgstr "交通資訊"
 
 # rsvp.html
-msgid "Please respond by November 1, 2026"
-msgstr "請於2026年11月1日前回覆"
+msgid "Please respond by August 31, 2026"
+msgstr "請於2026年8月31日前回覆"
 
 msgid "Your Name"
 msgstr "您的姓名"
@@ -111,6 +111,15 @@ msgstr "包含您本人。如攜伴或家人同行，請一併告知。"
 msgid "Dietary Notes"
 msgstr "飲食需求"
 
+msgid "Allergies or dietary restrictions"
+msgstr "過敏或飲食限制"
+
+msgid "Artist — Song title (optional)"
+msgstr "歌手 — 歌名（選填）"
+
+msgid "Leave a note for us (optional)"
+msgstr "給我們留言（選填）"
+
 msgid "Song Request"
 msgstr "點歌"
 
@@ -126,6 +135,9 @@ msgstr "送出回覆"
 # models.py choices
 msgid "Joyfully accepts"
 msgstr "欣然接受"
+
+msgid "Joyfully accepts with +1"
+msgstr "欣然接受並攜帶同行一位"
 
 msgid "Regretfully declines"
 msgstr "遺憾婉謝"
