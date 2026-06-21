@@ -1,8 +1,10 @@
 from django import forms
-from .models import RSVP
+from .models import RSVP, ATTENDANCE_CHOICES
 
 
 class RSVPForm(forms.ModelForm):
+    attendance = forms.ChoiceField(choices=ATTENDANCE_CHOICES, required=True)
+
     class Meta:
         model = RSVP
         fields = [

@@ -99,6 +99,9 @@ msgstr "出席人數"
 msgid "Guest"
 msgstr "賓客"
 
+msgid "Plus One"
+msgstr "同行賓客"
+
 msgid "Full name"
 msgstr "全名"
 

@@ -99,6 +99,9 @@ msgstr "Хэдэн хүн ирэх вэ"
 msgid "Guest"
 msgstr "Зочин"
 
+msgid "Plus One"
+msgstr "Дагалдах зочин"
+
 msgid "Full name"
 msgstr "Бүтэн нэр"
 

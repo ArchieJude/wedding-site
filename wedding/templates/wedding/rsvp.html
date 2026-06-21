@@ -47,6 +47,7 @@
 
       <div id="guest-names-container" class="attending-only"
            data-label="{% trans 'Guest' %}"
+           data-plusone-label="{% trans 'Plus One' %}"
            data-placeholder="{% trans 'Full name' %}"
            style="display:none"></div>
 
@@ -77,6 +78,7 @@
   const partyInput = document.getElementById('{{ form.number_in_party.id_for_label }}');
   const guestContainer = document.getElementById('guest-names-container');
   const guestLabel = guestContainer.dataset.label;
+  const plusOneLabel = guestContainer.dataset.plusoneLabel;
   const guestPlaceholder = guestContainer.dataset.placeholder;
 
   function updateGuestFields() {
@@ -86,10 +88,11 @@
     // Add fields up to numGuests
     while (guestContainer.children.length < numGuests) {
       const idx = guestContainer.children.length + 1;
+      const label = idx === 1 ? plusOneLabel : `${guestLabel} ${idx}`;
       const div = document.createElement('div');
       div.className = 'form-group';
       div.innerHTML =
-        `<label>${guestLabel} ${idx}</label>` +
+        `<label>${label}</label>` +
         `<input type="text" name="guest_name" placeholder="${guestPlaceholder}">`;
       guestContainer.appendChild(div);
     }
