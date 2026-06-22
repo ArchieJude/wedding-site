@@ -5,8 +5,7 @@ __pycache__/
 
 # Django
 db.sqlite3
-media/
-*.mo
+staticfiles/
 
 # Virtual environment
 .venv/
@@ -19,3 +18,12 @@ env/
 
 # macOS
 .DS_Store
+
+# Original photo files (processed JPEGs are committed instead)
+*.HEIC
+*.heic
+
+# Reference documents
+*.docx
+*.pdf
+our_story.txt

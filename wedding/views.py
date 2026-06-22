@@ -41,8 +41,6 @@ def _send_rsvp_notification(rsvp):
             lines.append(f"Guest {i}:     {name}")
     if rsvp.dietary_notes:
         lines.append(f"Dietary:     {rsvp.dietary_notes}")
-    if rsvp.song_request:
-        lines.append(f"Song:        {rsvp.song_request}")
     if rsvp.message:
         lines.append(f"Message:     {rsvp.message}")
 

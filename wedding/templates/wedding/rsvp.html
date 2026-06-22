@@ -56,12 +56,6 @@
         {{ form.dietary_notes }}
       </div>
 
-      <div class="form-group attending-only" style="display:none">
-        <label for="{{ form.song_request.id_for_label }}">{% trans "Song Request" %}</label>
-        {{ form.song_request }}
-        <p class="form-hint">{% trans "We'll try our best to play it!" %}</p>
-      </div>
-
       <div class="form-group">
         <label for="{{ form.message.id_for_label }}">{% trans "Message for Us" %}</label>
         {{ form.message }}
