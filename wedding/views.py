@@ -86,6 +86,12 @@ def _send_via_resend(api_key, subject, body):
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
+            # Resend sits behind Cloudflare, which blocks the default
+            # "Python-urllib" User-Agent as a bot (HTTP 403, Cloudflare code
+            # 1010). A normal browser UA gets the request through.
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                          "AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/120.0.0.0 Safari/537.36",
         },
         method="POST",
     )
