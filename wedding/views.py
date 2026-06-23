@@ -1,3 +1,4 @@
+import logging
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -5,6 +6,8 @@ from django.conf import settings
 from django.utils.translation import get_language
 from .models import GalleryPhoto, ScheduleEvent, RSVP
 from .forms import RSVPForm
+
+logger = logging.getLogger(__name__)
 
 
 def home(request):
@@ -45,13 +48,16 @@ def _send_rsvp_notification(rsvp):
     if rsvp.message:
         lines.append(f"Message:     {rsvp.message}")
 
-    send_mail(
-        subject=f"New RSVP: {rsvp.name} — {attending}",
-        message="\n".join(lines),
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        recipient_list=[settings.RSVP_NOTIFICATION_EMAIL],
-        fail_silently=True,  # never break the RSVP flow if email fails
-    )
+    try:
+        send_mail(
+            subject=f"New RSVP: {rsvp.name} — {attending}",
+            message="\n".join(lines),
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[settings.RSVP_NOTIFICATION_EMAIL],
+            fail_silently=False,
+        )
+    except Exception as e:
+        logger.error("RSVP email failed: %s", e)
 
 
 def rsvp_confirm(request):
