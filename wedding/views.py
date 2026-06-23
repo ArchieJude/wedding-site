@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import urllib.error
 import urllib.request
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -91,6 +92,9 @@ def _send_via_resend(api_key, subject, body):
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
             resp.read()
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode(errors="replace")
+        logger.error("RSVP email failed (Resend %s): %s", e.code, detail)
     except Exception as e:
         logger.error("RSVP email failed (Resend): %s", e)
 

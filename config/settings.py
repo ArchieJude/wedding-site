@@ -125,4 +125,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('GMAIL_USER', '')
 EMAIL_HOST_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD', '')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-RSVP_NOTIFICATION_EMAIL = 'ariel.toy@gmail.com'
+RSVP_NOTIFICATION_EMAIL = os.environ.get('RSVP_NOTIFICATION_EMAIL', 'ariel.toy@gmail.com')
