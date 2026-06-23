@@ -1,4 +1,7 @@
+import json
 import logging
+import os
+import urllib.request
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -48,16 +51,48 @@ def _send_rsvp_notification(rsvp):
     if rsvp.message:
         lines.append(f"Message:     {rsvp.message}")
 
+    subject = f"New RSVP: {rsvp.name} — {attending}"
+    body = "\n".join(lines)
+
+    # Railway blocks outbound SMTP, so in production we send over HTTPS via the
+    # Resend API (set RESEND_API_KEY). Locally, with no key, fall back to SMTP.
+    api_key = os.environ.get('RESEND_API_KEY')
+    if api_key:
+        _send_via_resend(api_key, subject, body)
+    else:
+        try:
+            send_mail(
+                subject=subject,
+                message=body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.RSVP_NOTIFICATION_EMAIL],
+                fail_silently=False,
+            )
+        except Exception as e:
+            logger.error("RSVP email failed (SMTP): %s", e)
+
+
+def _send_via_resend(api_key, subject, body):
+    payload = json.dumps({
+        "from": os.environ.get('RESEND_FROM', 'onboarding@resend.dev'),
+        "to": [settings.RSVP_NOTIFICATION_EMAIL],
+        "subject": subject,
+        "text": body,
+    }).encode()
+    req = urllib.request.Request(
+        "https://api.resend.com/emails",
+        data=payload,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
     try:
-        send_mail(
-            subject=f"New RSVP: {rsvp.name} — {attending}",
-            message="\n".join(lines),
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.RSVP_NOTIFICATION_EMAIL],
-            fail_silently=False,
-        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            resp.read()
     except Exception as e:
-        logger.error("RSVP email failed: %s", e)
+        logger.error("RSVP email failed (Resend): %s", e)
 
 
 def rsvp_confirm(request):
