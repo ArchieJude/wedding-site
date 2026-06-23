@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.db.models import Sum, Count, Q
 from django.http import HttpResponse
 from django.utils.html import format_html
+from django.utils.text import Truncator
 from .models import RSVP, GalleryPhoto, ScheduleEvent
 
 
@@ -24,7 +25,7 @@ export_rsvps_csv.short_description = 'Export selected RSVPs to CSV'
 
 @admin.register(RSVP)
 class RSVPAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'attendance', 'number_in_party', 'guest_names_display', 'submitted_at']
+    list_display = ['name', 'email', 'attendance', 'number_in_party', 'guest_names_display', 'dietary_display', 'message_display', 'submitted_at']
     list_filter = ['attendance']
     search_fields = ['name', 'email']
     readonly_fields = ['submitted_at']
@@ -34,6 +35,14 @@ class RSVPAdmin(admin.ModelAdmin):
     def guest_names_display(self, obj):
         return ', '.join(obj.guest_names) if obj.guest_names else '—'
     guest_names_display.short_description = 'Guests'
+
+    def dietary_display(self, obj):
+        return Truncator(obj.dietary_notes).chars(60) if obj.dietary_notes else '—'
+    dietary_display.short_description = 'Dietary'
+
+    def message_display(self, obj):
+        return Truncator(obj.message).chars(60) if obj.message else '—'
+    message_display.short_description = 'Message'
 
     def changelist_view(self, request, extra_context=None):
         qs = self.get_queryset(request)
