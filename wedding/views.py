@@ -4,7 +4,6 @@ import os
 import urllib.error
 import urllib.request
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 from django.utils.translation import get_language
@@ -28,7 +27,7 @@ def rsvp(request):
             ]
             rsvp.save()
             _send_rsvp_notification(rsvp)
-            messages.success(request, "Thank you! Your RSVP has been received.")
+            request.session['rsvp_attending'] = (rsvp.attendance == 'yes')
             return redirect('rsvp_confirm')
     else:
         form = RSVPForm()
@@ -106,7 +105,9 @@ def _send_via_resend(api_key, subject, body):
 
 
 def rsvp_confirm(request):
-    return render(request, 'wedding/rsvp_confirm.html')
+    # Default to the warm "attending" message if someone lands here directly.
+    attending = request.session.pop('rsvp_attending', True)
+    return render(request, 'wedding/rsvp_confirm.html', {'attending': attending})
 
 
 def gallery(request):

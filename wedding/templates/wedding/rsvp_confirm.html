@@ -8,6 +8,7 @@
     <div class="confirm-icon">&#9825;</div>
     <h1 class="section-title">{% trans "Thank You!" %}</h1>
     {% get_current_language as LANG %}
+    {% if attending %}
     {% if LANG == "zh-hant" %}
     <p class="story__text">
       我們已收到您的回覆，迫不及待與您在台北共同慶祝。
@@ -28,6 +29,26 @@
       <a href="{% url 'travel' %}" class="btn btn--secondary">{% trans "Travel Info" %}</a>
       <a href="{% url 'faq' %}" class="btn btn--secondary">{% trans "FAQ" %}</a>
     </div>
+    {% else %}
+    {% if LANG == "zh-hant" %}
+    <p class="story__text">
+      感謝您的回覆，也謝謝您讓我們知道。很遺憾這次無法與您相聚，
+      但我們完全理解。我們會想念您的，期待未來能有機會再相聚。
+    </p>
+    {% elif LANG == "mn" %}
+    <p class="story__text">
+      Хариулсан танд баярлалаа, мөн мэдэгдсэнд баярлалаа. Та бидэнтэй хамт байж
+      чадахгүйд бид харамсаж байгаа ч бүрэн ойлгож байна. Бид таныг санах болно,
+      хожим хамт тэмдэглэхийг хүсэж байна.
+    </p>
+    {% else %}
+    <p class="story__text">
+      Thank you for letting us know. We're so sorry you won't be able to join us,
+      but we completely understand — you'll be missed, and we hope to celebrate
+      together another time.
+    </p>
+    {% endif %}
+    {% endif %}
   </div>
 </section>
 {% endblock %}
