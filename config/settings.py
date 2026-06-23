@@ -1,5 +1,4 @@
 import os
-import dj_database_url
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,9 +29,15 @@ INSTALLED_APPS = [
     'wedding',
 ]
 
+_WHITENOISE_AVAILABLE = True
+try:
+    import whitenoise  # noqa: F401
+except ImportError:
+    _WHITENOISE_AVAILABLE = False
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    *(['whitenoise.middleware.WhiteNoiseMiddleware'] if _WHITENOISE_AVAILABLE else []),
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -65,6 +70,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database — use PostgreSQL in production (DATABASE_URL set by Railway),
 # fall back to SQLite for local development.
 if os.environ.get('DATABASE_URL'):
+    import dj_database_url
     DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'], conn_max_age=600)}
 else:
     DATABASES = {
@@ -101,7 +107,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+if _WHITENOISE_AVAILABLE:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Media files — gallery photos are committed to git and served from MEDIA_ROOT.
 MEDIA_URL = '/media/'

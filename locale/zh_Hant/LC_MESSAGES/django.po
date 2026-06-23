@@ -62,8 +62,8 @@ msgstr "溫馨親密的場地中交換西式誓言"
 msgid "Dinner Reception"
 msgstr "婚宴晚宴"
 
-msgid "Celebratory dinner together in the same room"
-msgstr "同一廳堂中共享精緻晚宴"
+msgid "Celebratory dinner together"
+msgstr "共享精緻晚宴"
 
 msgid "The Venue"
 msgstr "婚禮場地"

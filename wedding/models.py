@@ -31,6 +31,8 @@ class RSVP(models.Model):
 class GalleryPhoto(models.Model):
     image = models.ImageField(upload_to='gallery/')
     caption = models.CharField(max_length=300, blank=True)
+    caption_zh_hant = models.CharField(max_length=300, blank=True, verbose_name='Caption (中文)')
+    caption_mn = models.CharField(max_length=300, blank=True, verbose_name='Caption (Монгол)')
     order = models.PositiveIntegerField(default=0)
 
     class Meta:

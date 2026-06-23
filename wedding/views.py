@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+from django.utils.translation import get_language
 from .models import GalleryPhoto, ScheduleEvent, RSVP
 from .forms import RSVPForm
 
@@ -58,7 +59,15 @@ def rsvp_confirm(request):
 
 
 def gallery(request):
+    lang = get_language()
     photos = GalleryPhoto.objects.all()
+    for photo in photos:
+        if lang == 'zh-hant':
+            photo.display_caption = photo.caption_zh_hant or photo.caption
+        elif lang == 'mn':
+            photo.display_caption = photo.caption_mn or photo.caption
+        else:
+            photo.display_caption = photo.caption
     return render(request, 'wedding/gallery.html', {'photos': photos})
 
 

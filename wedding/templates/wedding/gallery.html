@@ -13,9 +13,9 @@
     {% if photos %}
     <div class="gallery-grid">
       {% for photo in photos %}
-      <figure class="gallery-item" onclick="openLightbox('{{ photo.image.url }}', '{{ photo.caption|escapejs }}')">
-        <img src="{{ photo.image.url }}" alt="{{ photo.caption }}">
-        {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+      <figure class="gallery-item" onclick="openLightbox('{{ photo.image.url }}', '{{ photo.display_caption|escapejs }}')">
+        <img src="{{ photo.image.url }}" alt="{{ photo.display_caption }}">
+        {% if photo.display_caption %}<figcaption>{{ photo.display_caption }}</figcaption>{% endif %}
       </figure>
       {% endfor %}
     </div>

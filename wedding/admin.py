@@ -52,6 +52,7 @@ class RSVPAdmin(admin.ModelAdmin):
 class GalleryPhotoAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'order']
     list_editable = ['order']
+    fields = ['image', 'order', 'caption', 'caption_zh_hant', 'caption_mn']
 
 
 @admin.register(ScheduleEvent)
