@@ -74,7 +74,7 @@ def _send_rsvp_notification(rsvp):
 
 def _send_via_resend(api_key, subject, body):
     payload = json.dumps({
-        "from": os.environ.get('RESEND_FROM', 'onboarding@resend.dev'),
+        "from": os.environ.get('RESEND_FROM', 'Ariel & Achbold Wedding <onboarding@resend.dev>'),
         "to": [settings.RSVP_NOTIFICATION_EMAIL],
         "subject": subject,
         "text": body,
